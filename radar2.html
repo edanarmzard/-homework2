@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting Started with Chart JS with www.chartjs3.com</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartBox {
+        width: 700px;
+        padding: 20px;
+        border-radius: 20px;
+        border: dashed 4px #D49001;
+        background: rgba(154, 102, 146, 0.2);
+      }
+    </style>
+  </head>
+  <body>    
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+   
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    // setup 
+    const data = {
+      labels: ['Shirt', 'Pants', 'Shoes', 'Hat'],
+      datasets: [{
+        label: 'Yearly Sales',
+        data: [699, 614, 630, 840],
+        backgroundColor: ['rgba(200, 102, 19, 0.2)'],
+        borderColor: ['rgba(75, 102, 19, 2)'],
+        borderWidth: 1
+      }]
+    };
+
+    // config 
+    const config = {
+      type: 'radar',
+      data,
+      options: {
+        scales: {
+          }
+      }
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+    </script>
+
+  </body>
+</html>

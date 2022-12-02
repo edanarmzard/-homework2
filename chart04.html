@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<style>
+    .button {
+      background-color: #94E5AB;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+    
+    .button2 {background-color: #4EC1B1;}
+    .button3 {background-color: #208294;}
+    .button4 {background-color: #0E5187;}
+</style>
+
+<body>
+<Table>
+<Tr>
+    <Td><center><button class="button">Shirt</button></center></Td>
+    <td><center><button class="button button2">Pants</button></center></td>
+    
+</Tr>
+
+<Tr>
+    <Td><canvas id="myChart" style="width:200%;max-width:600px"></canvas></Td>
+    <td><canvas id="myChart2" style="width:200%;max-width:600px"></canvas></td>
+    
+</Tr>
+</table>
+
+<Table>
+  <Tr>
+      <Td><center><button class="button button3">Shoes<br></button></center></Td>
+      <td><center><button class="button button4">Hat<br></button></center></td>
+  </Tr>
+  
+  <Tr>
+      <Td><canvas id="myChart3" style="width:200%;max-width:600px"></canvas></Td>
+      <td><canvas id="myChart4" style="width:200%;max-width:600px"></canvas></td>
+  </Tr>
+  </table>
+
+<script>
+var barColors = [
+  "#FAD72B",
+  "#FFB22E",
+  "#E68420",
+  "#B10E73",
+  "#590160",
+  "#00FFFF",
+  "#33CCE5",
+  "#6699CC",
+  "#9966B2",
+  "#CC3399",
+  "#FFE401",
+  "#A4EA1D"
+];
+var xValues = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+var yValues = [100, 90, 70, 50, 44, 32, 20, 60, 25, 35,23,150];
+
+new Chart("myChart", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Amount"
+    }
+  }
+});
+
+var xValues = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+var yValues = [66, 45, 32, 40, 57, 63, 72, 24, 32, 49, 56, 78];
+new Chart("myChart2", {
+  type: "pie",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Amount"
+    }
+  }
+});
+
+var xValues3 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+var yValues3 = [50, 60, 36, 48, 52, 43, 49, 50, 34, 64, 64, 80];
+new Chart("myChart3", {
+  type: "bar",
+  data: {
+    labels: xValues3,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues3
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Amount"
+    }
+  }
+});
+
+var xValues4 = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+var yValues4 = [69, 78, 73, 64, 55, 36, 47, 96, 58, 79, 86, 99];
+new Chart("myChart4", {
+  type: "bar",
+  data: {
+    labels: xValues4,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues4
+    }]
+  },
+  options: {
+    title: {
+      display: true,
+      text: "Amount"
+    }
+  }
+});
+
+
+// JS 
+</script>
+
+</body>
+</html>

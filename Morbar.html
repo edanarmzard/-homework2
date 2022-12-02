@@ -1,0 +1,99 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Getting Started with Chart JS with www.chartjs3.com</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartMenu {
+        width: 100vw;
+        height: 40px;
+        background: #D3CDC4;
+        color: #AE8057;
+      }
+      .chartMenu p {
+        padding: 10px;
+        font-size: 20px;
+      }
+      .chartCard {
+        width: 100vw;
+        height: calc(100vh - 40px);
+        background: #233953;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 700px;
+        padding: 20px;
+        border-radius: 20px;
+        border: solid 3px #CCA481;
+        background: #F1E7DA;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chartMenu">
+      <p>WWW.CHARTJS3.COM (Chart JS 3.8.2)</p>
+    </div>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    // setup 
+    const data = {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [{
+        label: 'Shirt',
+        data: [100, 90, 70, 50, 44, 32, 20, 60, 25, 35,23,150],
+        backgroundColor: '#012CC8',
+        borderColor: 'rgba(54, 162, 235, 1)',          
+      },{
+        label: 'Pants',
+        data: [66, 45, 32, 40, 57, 63, 72, 24, 32, 49, 56, 78],
+        backgroundColor: '#00C50A',        
+        borderColor: 'rgba(75, 192, 192, 1)',
+      },{
+        label: 'Shoes',
+        data: [50, 60, 36, 48, 52, 43, 49, 50, 34, 64, 64, 80],
+        backgroundColor: '#EAE140',
+        borderColor: 'rgba(75, 192, 192, 1)',
+      },{
+        label: 'Hat',
+        data: [69, 78, 73, 64, 55, 36, 47, 96, 58, 79, 86, 99],
+        backgroundColor: '#D600C3',
+        borderColor: 'rgba(75, 192, 192, 1)',
+      }]
+    };
+
+    // config 
+    const config = {
+      type: 'bar',
+      data,
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    };
+
+    // render init block
+    const myChart = new Chart(
+      document.getElementById('myChart'),
+      config
+    );
+    </script>
+
+  </body>
+</html>
